@@ -1,9 +1,9 @@
 %h1
   タイムライン
 
-%time_line
+%div.time_line
   - @posts.each do |post|
-    %post
-      %post_content= post.content
-      %post_time= post.created_at
+    %div.post
+      %p.post_content= post.content
+      %p.post_time= post.created_at
       %br
