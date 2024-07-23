@@ -11,6 +11,16 @@
   </head>
 
   <body>
+    <% flash.each do |key, message| %>
+      <% class_name = case key.to_sym
+                      when :notice then 'alert alert-success'
+                      when :alert then 'alert alert-danger'
+                      else 'alert alert-info'
+                      end %>
+      <div class="<%= class_name %>">
+        <%= message %>
+      </div>
+    <% end %>
     <%= yield %>
   </body>
 </html>

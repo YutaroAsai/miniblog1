@@ -9,8 +9,9 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to posts_path, notice: '投稿が成功しました。'
     else
-      flash.now[:alert] = @post.errors.full_messages.join(', ')
-      render :index
+      @posts = Post.order(created_at: :desc)
+      flash.now[:alert] = '投稿が失敗しました。'
+      render:index
     end
   end
 
