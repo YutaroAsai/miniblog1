@@ -46,6 +46,7 @@ gem "bootsnap", require: false
 
 # hamlファイルを使用するためのライブラリ
 gem 'haml-rails'
+gem 'html2haml'
 
 # bootstrap導入
 gem 'bootstrap', '~> 5.3.0'
